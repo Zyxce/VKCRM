@@ -1,0 +1,66 @@
+.dataContainer
+    height: 470px
+    overflow-y: auto
+    box-sizing: border-box
+
+    .dataTable
+        width: 100%
+
+        border-collapse: collapse
+
+        thead
+        .dataTableHeader
+            .dataTableHeaderTR
+                th
+                    position: sticky
+                    border-bottom: 1px solid var(--color-border)
+                    top: 0
+                    z-index: 2
+                    text-align: left
+                    background-color: var(--color-bg-th)
+                    padding: var(--spacing-sm) var(--spacing-md)
+                    color: var( --color-text-th)
+                .dataTableHeaderActions
+                    text-align: center
+                th:first-child
+                    text-align: center
+                    border-right: 1px solid var(--color-border)
+
+        .dataTableBody
+            tr
+                text-align: left
+                td
+                    white-space: nowrap
+                    padding: var(--spacing-sm) var(--spacing-sm)
+                    color: var(--color-text-td)
+                td:first-child
+                    text-align: center
+                    border-right: 1px solid var(--color-border)
+
+            tr
+                &:nth-child(even)
+                    background-color: rgba(0,0,0,0.02)
+
+            .noMoreRecords
+                background-color: var(--color-bg-nomore-tr)
+                td
+                    .dataIconNoMore
+                        margin-left: var(--spacing-sm)
+                        color: var(--color-text-primary)
+
+            .loadingData
+                background-color: var(--color-bg-loading-tr)
+                td
+                    .dataIconLoading
+                        margin-left: var(--spacing-sm)
+                        color: var(--color-accent)
+                        animation: spin 1s linear infinite
+
+        td
+            border-bottom: 1px solid var(--color-border)
+
+@keyframes spin
+    from
+        transform: rotate(0deg)
+    to
+        transform: rotate(360deg)

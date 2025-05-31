@@ -1,0 +1,61 @@
+.inputContainer
+    display: flex
+    flex-direction: column
+    position: relative
+
+    .inputLabel
+        font-family: var(--font-secondary)
+        font-size: var(--font-size-md)
+        color: var(--color-text-secondary)
+        margin-bottom: var(--spacing-xs)
+        display: flex
+        align-items: center
+
+        .requiredAsterisk
+            color: var(--color-error)
+            margin-left: var(--spacing-xs)
+
+    select.inputSelect,
+    input.inputField
+        width: 100%
+        box-sizing: border-box
+        font-family: var(--font-primary)
+        font-size: var(--font-size-base)
+        padding: var(--spacing-sm) var(--spacing-md)
+        border: 1px solid var(--color-border)
+        border-radius: var(--radius-base)
+        background-color: var(--color-form)
+        color: var(--color-text-primary)
+        transition: border-color var(--transition-base), box-shadow var(--transition-base)
+
+        &:focus
+            outline: none
+            border-color: var(--color-accent)
+            box-shadow: 0 0 0 3px rgba(var(--color-accent), 0.25)
+
+        &.error
+            border-color: var(--color-error)
+
+        .inputSelect
+            appearance: none
+            background-image: url("data:image/svg+xml;charset=UTF-8,<svg width='10' height='6' viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'><path d='M0 0l5 6 5-6z' fill='%23e0f7ff'/></svg>")
+            background-repeat: no-repeat
+            background-position: right var(--spacing-sm) center
+            background-size: 10px 6px
+
+            .inputOption
+                background-color: var(--color-surface)
+                color: var(--color-text-primary)
+
+    .inputField
+        &::placeholder
+            color: var(--color-text-secondary)
+
+    .error
+        position: absolute
+        bottom: -1.2rem
+        left: 0
+        margin-top: var(--spacing-xs)
+        font-size: var(--font-size-sm)
+        color: var(--color-error)
+        font-family: var(--font-secondary)

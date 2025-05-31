@@ -1,0 +1,59 @@
+.formContainer {
+  padding: var(--spacing-md) var(--spacing-lg);
+  box-shadow: var(--shadow-base);
+  border-radius: var(--radius-base);
+  box-sizing: border-box;
+  background-color: var(--color-card);
+  text-align: start;
+  height: 470px;
+  overflow-y: auto;
+}
+.formContainer .form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.formContainer .form .fieldsWrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg) var(--spacing-sm);
+}
+.formContainer .form .error {
+  margin-top: var(--spacing-md);
+  color: var(--color-error);
+  grid-column: 1/-1;
+}
+.formContainer .form .error p {
+  display: flex;
+  align-items: center;
+}
+.formContainer .form .error p .errorIcon {
+  margin-left: var(--spacing-xs);
+}
+.formContainer .form .formSubmit {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-sm);
+}
+
+@media (max-width: 700px) {
+  .formContainer .form .fieldsWrapper {
+    grid-template-columns: 1fr;
+  }
+  .formContainer .form .formSubmit {
+    padding-bottom: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+  }
+}
+@media (max-width: 400px) {
+  .formContainer .form .fieldsWrapper {
+    grid-template-columns: 1fr;
+  }
+  .formContainer .form .formSubmit {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+  }
+}/*# sourceMappingURL=RecordForm.module.css.map */

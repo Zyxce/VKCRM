@@ -1,0 +1,43 @@
+*
+  margin: 0
+  padding: 0
+
+body
+  background-color: var(--color-bg)
+  font-family: var(--font-primary)
+  overflow-y: hidden
+  ::-webkit-scrollbar
+    width: 6px
+    height: 6px
+  ::-webkit-scrollbar-track
+    background: var(--color-scrollbar-track)
+    border-radius: 4px
+
+  ::-webkit-scrollbar-thumb
+    background-color: var(--color-scrollbar)
+    border-radius: 4px
+    border: 2px solid transparent thumb
+    background-clip: content-box border
+
+  ::-webkit-scrollbar-thumb:hover
+    background-color: var(--color-scrollbar-hover)
+
+@media (max-width: 700px)
+
+  body
+    overflow-y: auto
+    ::-webkit-scrollbar
+      width: 2px
+      height: 2px
+    ::-webkit-scrollbar-track
+      background: var(--color-scrollbar-track)
+      border-radius: 4px
+
+    ::-webkit-scrollbar-thumb
+      background-color: var(--color-scrollbar)
+      border-radius: 4px
+      border: 2px solid transparent thumb
+      background-clip: content-box border
+
+    ::-webkit-scrollbar-thumb:hover
+      background-color: var(--color-scrollbar-hover)
