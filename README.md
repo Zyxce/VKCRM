@@ -1,167 +1,104 @@
-<<<<<<< HEAD
-# VKCRM
-=======
-# My React project template
+# VK-CRM MVP
 
-## Available Scripts
+Простое одностраничное приложение (MVP) для управления записями сотрудников (CRM), реализованное на основе React и TypeScript.
 
-In the project directory, you can run:
+## Ключевые возможности
 
-### `npm start`
+- Просмотр списка сотрудников с бесконечной прокруткой (infinite scroll).
+- Добавление новой записи сотрудника через модальное окно.
+- Редактирование существующей записи через модальное окно.
+- Удаление записи сотрудника.
+- Валидация форм на клиенте с помощью Zod и react-hook-form.
+- Глобальное состояние управления записями через zustand.
+- Простая JSON-Server API для эмуляции бэкенда.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Технологии
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **React** + **TypeScript**
+- **Zustand** для управления состоянием
+- **react-hook-form** + **Zod** для валидации форм
+- **axios** для HTTP-запросов
+- **json-server** для мокового REST API
+- **Jest** и **React Testing Library** для модульных тестов
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Структура проекта
 
 ```
 36-VK-CRM
-├─ db.json
-├─ package-lock.json
-├─ package.json
-├─ public
-│  ├─ about.txt
-│  ├─ android-chrome-192x192.png
-│  ├─ android-chrome-512x512.png
-│  ├─ apple-touch-icon.png
-│  ├─ favicon-16x16.png
-│  ├─ favicon-32x32.png
-│  ├─ favicon.ico
-│  ├─ index.html
-│  └─ site.webmanifest
-├─ README.md
-├─ src
-│  ├─ api
-│  │  └─ index.ts
-│  ├─ components
-│  │  ├─ App.tsx
-│  │  ├─ DataTable
-│  │  │  ├─ DataTable.tsx
-│  │  │  ├─ EditableCell.tsx
-│  │  │  ├─ RowActions.tsx
-│  │  │  └─ TableRow.tsx
-│  │  ├─ EditRecordForm.tsx
-│  │  ├─ RecordForm.tsx
-│  │  └─ UI
-│  │     ├─ Button.tsx
-│  │     ├─ FormInput.tsx
-│  │     ├─ Modal.tsx
-│  │     ├─ TableBottom.tsx
-│  │     └─ TableHeader.tsx
-│  ├─ config
-│  │  └─ fieldsConfig.ts
-│  ├─ global.d.ts
-│  ├─ hooks
-│  │  └─ useInfiniteScroll.ts
-│  ├─ index.tsx
-│  ├─ setupTests.ts
-│  ├─ store
-│  │  └─ useRecordsStore.ts
-│  ├─ styles
-│  │  ├─ base
-│  │  │  ├─ normalize.css
-│  │  │  ├─ variables.css
-│  │  │  ├─ variables.css.map
-│  │  │  └─ variables.sass
-│  │  ├─ components
-│  │  │  ├─ App.css
-│  │  │  ├─ App.css.map
-│  │  │  ├─ App.sass
-│  │  │  ├─ DataTable
-│  │  │  │  ├─ DataTable.module.css
-│  │  │  │  ├─ DataTable.module.css.map
-│  │  │  │  ├─ DataTable.module.sass
-│  │  │  │  ├─ RowActions.module.css
-│  │  │  │  ├─ RowActions.module.css.map
-│  │  │  │  └─ RowActions.module.sass
-│  │  │  ├─ RecordForm.module.css
-│  │  │  ├─ RecordForm.module.css.map
-│  │  │  ├─ RecordForm.module.sass
-│  │  │  └─ UI
-│  │  │     ├─ Button.module.css
-│  │  │     ├─ Button.module.css.map
-│  │  │     ├─ Button.module.sass
-│  │  │     ├─ FormInput.module.css
-│  │  │     ├─ FormInput.module.css.map
-│  │  │     ├─ FormInput.module.sass
-│  │  │     ├─ Modal.module.css
-│  │  │     ├─ Modal.module.css.map
-│  │  │     ├─ Modal.module.sass
-│  │  │     ├─ TableBottom.module.css
-│  │  │     ├─ TableBottom.module.css.map
-│  │  │     ├─ TableBottom.module.sass
-│  │  │     ├─ TableHeader.module.css
-│  │  │     ├─ TableHeader.module.css.map
-│  │  │     └─ TableHeader.module.sass
-│  │  ├─ index.css
-│  │  ├─ index.css.map
-│  │  └─ index.sass
-│  ├─ types.ts
-│  ├─ utils
-│  │  ├─ FormValidation.ts
-│  │  └─ schema.ts
-│  └─ __tests__
-│     ├─ InfiniteScroll.test.tsx
-│     ├─ RecordForm.error.test.tsx
-│     ├─ RecordForm.validation.test.tsx
-│     └─ RecordFrom.success.test.tsx
-└─ tsconfig.json
-
+├─ db.json                   # Начальные данные для json-server
+├─ package.json              # Скрипты и зависимости
+├─ public                    # Статические файлы
+├─ README.md                 # Текущий файл
+├─ src                       # Исходный код приложения
+│  ├─ api                    # Функции API (axios)
+│  ├─ components             # React-компоненты
+│  │  ├─ DataTable           # Таблица данных и вспомогательные компоненты
+│  │  ├─ RecordForm          # Форма создания записи
+│  │  ├─ EditRecordForm      # Форма редактирования записи
+│  │  └─ UI                  # Повторно используемые UI-элементы (Modal, Button, FormInput и т.д.)
+│  ├─ config                 # Конфигурация полей формы
+│  ├─ hooks                  # Кастомные хуки (useInfiniteScroll)
+│  ├─ store                  # Zustand store для управления записями
+│  ├─ styles                 # CSS/SCSS модули для компонентов
+│  └─ utils                  # Утилиты для валидации (Zod-схемы)
+└─ tsconfig.json             # Конфигурация TypeScript
 ```
->>>>>>> 5368a0f (First MVP)
+
+## Установка и запуск
+
+1. Клонировать репозиторий и перейти в папку проекта:
+
+   ```bash
+   git clone <URL>
+   cd 36-VK-CRM
+   ```
+
+2. Установить зависимости:
+
+   ```bash
+   npm install
+   ```
+
+3. Запустить моковый сервер JSON-Server на порту 3001:
+
+   ```bash
+   npm run server
+   ```
+
+4. В отдельной консоли запустить React-приложение:
+
+   ```bash
+   npm start
+   ```
+
+5. Открыть в браузере:
+
+   ```
+   http://localhost:3000
+   ```
+
+## Скрипты
+
+- `npm start` — запуск фронтенд-сервера (react-scripts).
+- `npm run server` — запуск JSON-Server для API (db.json).
+- `npm run build` — сборка production-версии.
+- `npm test` — запуск тестов.
+- `npm run eject` — извлечение конфигурации create-react-app.
+
+## API
+
+- **GET** `/records?_start=<offset>&_limit=<limit>` — получить список записей с пагинацией.
+- **POST** `/records` — добавить новую запись (без `id`, генерируется сервером).
+- **PATCH** `/records/:id` — обновить запись по `id`.
+- **DELETE** `/records/:id` — удалить запись.
+
+## Тестирование
+
+- Используются Jest и React Testing Library.
+- Покрытие тестами компонентов RecordForm, бесконечной прокрутки и обработки ошибок.
+
+Запуск тестов:
+
+```bash
+npm test
+```
