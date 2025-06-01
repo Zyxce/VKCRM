@@ -1,4 +1,8 @@
 .rowContainer {
   display: flex;
+  align-items: start;
   gap: var(--spacing-xs);
+}
+.rowContainer > *:not(:last-child) {
+  margin-right: var(--spacing-xs);
 }/*# sourceMappingURL=RowActions.module.css.map */

@@ -7,6 +7,7 @@
   text-align: start;
   height: 470px;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 .formContainer .form {
   display: flex;
@@ -15,6 +16,7 @@
 }
 .formContainer .form .fieldsWrapper {
   display: grid;
+  display: -ms-grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-lg) var(--spacing-sm);
 }
@@ -40,6 +42,7 @@
 @media (max-width: 700px) {
   .formContainer .form .fieldsWrapper {
     grid-template-columns: 1fr;
+    -ms-grid-columns: 1fr;
   }
   .formContainer .form .formSubmit {
     padding-bottom: var(--spacing-lg);
@@ -49,6 +52,7 @@
 @media (max-width: 400px) {
   .formContainer .form .fieldsWrapper {
     grid-template-columns: 1fr;
+    -ms-grid-columns: 1fr;
   }
   .formContainer .form .formSubmit {
     display: flex;

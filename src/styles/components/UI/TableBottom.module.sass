@@ -1,35 +1,58 @@
+
 .tableBottom
+    display: -webkit-box
+    display: -ms-flexbox
     display: flex
+    -webkit-box-pack: center
+    -ms-flex-pack: center
     justify-content: center
+    -webkit-box-align: center
+    -ms-flex-align: center
+    align-items: center
     margin-top: var(--spacing-lg)
     padding-top: var(--spacing-lg)
     border-top: 1px solid var(--color-border)
-    align-items: center
-    .dataLoading
-        color: var(--color-text-secondary)
+
+    .dataLoading,
+    .dataLoaded,
+    .dataNotLoaded
+        display: -webkit-box
+        display: -ms-flexbox
         display: flex
+        -webkit-box-align: center
+        -ms-flex-align: center
         align-items: center
+        color: var(--color-text-secondary)
+
+    .dataLoading
         .dataIconLoading
             margin-left: var(--spacing-sm)
             color: var(--color-accent)
+            -webkit-animation: spin 1s linear infinite
             animation: spin 1s linear infinite
+
     .dataLoaded
-        color: var(--color-text-secondary)
-        display: flex
-        align-items: center
         .dataIcon
             margin-left: var(--spacing-xs)
             color: var(--color-success)
+
     .dataNotLoaded
-        color: var(--color-text-secondary)
-        display: flex
-        align-items: center
         .dataIcon
             margin-left: var(--spacing-xs)
             color: var(--color-error)
 
+@-webkit-keyframes spin
+    from
+    -webkit-transform: rotate(0deg)
+    transform: rotate(0deg)
+    to
+    -webkit-transform: rotate(360deg)
+    transform: rotate(360deg)
+
 @keyframes spin
     from
+        -webkit-transform: rotate(0deg)
         transform: rotate(0deg)
     to
+        -webkit-transform: rotate(360deg)
         transform: rotate(360deg)

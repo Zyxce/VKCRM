@@ -14,6 +14,12 @@ export const FormInput: React.FC<FormInputProps> = ({
   englishOnly,
   onChange,
 }) => {
+  let placeholder = ''
+  if (name === 'email') {
+    placeholder = 'mail@mail.com'
+  } else if (englishOnly) {
+    placeholder = 'English characters only'
+  }
   return (
     <div className={style.inputContainer}>
       <label htmlFor={name} className={style.inputLabel}>
@@ -50,7 +56,7 @@ export const FormInput: React.FC<FormInputProps> = ({
           disabled={disabled}
           className={`${style.inputField} ${errorMessage ? 'error' : ''}`}
           aria-invalid={!!errorMessage}
-          placeholder={englishOnly ? 'English characters only' : ''}
+          placeholder={placeholder}
         />
       )}
 

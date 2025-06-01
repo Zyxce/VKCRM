@@ -15,7 +15,7 @@ export const fieldsConfig: FieldConfig[] = [
     englishOnly: true,
     validation: z
       .string()
-      .min(2, 'Name must be at least 2 characters')
+      .min(1, 'Fullname too short')
       .regex(englishRegex, englishErrorMessage),
   },
   {
@@ -33,7 +33,7 @@ export const fieldsConfig: FieldConfig[] = [
     validation: z.coerce
       .number()
       .min(18, 'Must be at least 18 years old')
-      .max(100, 'Invalid age value'),
+      .max(65, 'Invalid age value'),
   },
   {
     name: 'city',

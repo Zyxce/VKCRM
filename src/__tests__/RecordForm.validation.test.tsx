@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, screen } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { RecordForm } from '../components/RecordForm'
 
@@ -10,10 +10,8 @@ describe('RecordForm — валидация', () => {
     userEvent.click(screen.getByRole('button', { name: /Save Record/i }))
 
     // проверка на валидацию
-    //имя: минимум 2 символа
-    expect(
-      await screen.findByText(/must be at least 2 characters/i)
-    ).toBeInTheDocument()
+    //имя: минимум 1 символ
+    expect(await screen.findByText(/fullname too short/i)).toBeInTheDocument()
     //почта: формат
     expect(await screen.findByText(/invalid email format/i)).toBeInTheDocument()
     // возраст: минимум 18

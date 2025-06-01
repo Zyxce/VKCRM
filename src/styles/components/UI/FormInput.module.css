@@ -38,8 +38,8 @@
 .inputContainer input.inputField.error {
   border-color: var(--color-error);
 }
-.inputContainer select.inputSelect .inputSelect,
-.inputContainer input.inputField .inputSelect {
+.inputContainer select.inputSelect.inputSelect,
+.inputContainer input.inputField.inputSelect {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -48,16 +48,25 @@
   background-position: right var(--spacing-sm) center;
   background-size: 10px 6px;
 }
-.inputContainer select.inputSelect .inputSelect .inputOption,
-.inputContainer input.inputField .inputSelect .inputOption {
-  background-color: var(--color-surface);
+.inputContainer select.inputSelect.inputSelect .inputOption,
+.inputContainer input.inputField.inputSelect .inputOption {
+  background-color: var(--color-form);
   color: var(--color-text-primary);
 }
 .inputContainer .inputField::-moz-placeholder {
-  color: var(--color-text-secondary);
+  color: var(--color-text-placeholder);
 }
 .inputContainer .inputField::placeholder {
-  color: var(--color-text-secondary);
+  color: var(--color-text-placeholder);
+}
+.inputContainer .inputField::-webkit-input-placeholder {
+  color: var(--color-text-placeholder);
+}
+.inputContainer .inputField:-ms-input-placeholder {
+  color: var(--color-text-placeholder);
+}
+.inputContainer .inputField::-ms-input-placeholder {
+  color: var(--color-text-placeholder);
 }
 .inputContainer .error {
   position: absolute;

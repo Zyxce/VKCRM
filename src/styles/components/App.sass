@@ -1,19 +1,34 @@
+
 .App
   text-align: center
+  display: -webkit-box
+  display: -ms-flexbox
   display: flex
+  -webkit-box-orient: vertical
+  -webkit-box-direction: normal
+  -ms-flex-direction: column
   flex-direction: column
   max-width: 1300px
   margin: 0 auto
   height: 100vh
+  -webkit-box-pack: center
+  -ms-flex-pack: center
   justify-content: center
   padding: 1rem
+
   .table-container
     border: 1px solid var(--color-border)
     padding: var(--spacing-lg)
+    -webkit-border-radius: var(--radius-base)
+    -moz-border-radius: var(--radius-base)
     border-radius: var(--radius-base)
     background-color: var(--color-card)
+    -webkit-box-shadow: var(--shadow-base)
     box-shadow: var(--shadow-base)
+
     .table-border
       border: 1px solid var(--color-border)
+      -webkit-border-radius: var(--radius-base)
+      -moz-border-radius: var(--radius-base)
       border-radius: var(--radius-base)
       overflow: hidden

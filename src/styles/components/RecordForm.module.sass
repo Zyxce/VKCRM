@@ -1,18 +1,30 @@
+
 .formContainer
     padding: var(--spacing-md) var(--spacing-lg)
+    -webkit-box-shadow: var(--shadow-base)
     box-shadow: var(--shadow-base)
+    -webkit-border-radius: var(--radius-base)
+    -moz-border-radius: var(--radius-base)
     border-radius: var(--radius-base)
     box-sizing: border-box
     background-color: var(--color-card)
     text-align: start
     height: 470px
     overflow-y: auto
+    -webkit-overflow-scrolling: touch
     .form
+        display: -webkit-box
+        display: -ms-flexbox
         display: flex
+        -webkit-box-orient: vertical
+        -webkit-box-direction: normal
+        -ms-flex-direction: column
         flex-direction: column
         height: 100%
         .fieldsWrapper
             display: grid
+            display: -ms-grid
+            -ms-grid-columns: 1fr 1fr
             grid-template-columns: repeat(2, 1fr)
             gap: var(--spacing-lg) var(--spacing-sm)
         .error
@@ -20,21 +32,31 @@
             color: var(--color-error)
             grid-column: 1 / -1
             p
+                display: -webkit-box
+                display: -ms-flexbox
                 display: flex
+                -webkit-box-align: center
+                -ms-flex-align: center
                 align-items: center
                 .errorIcon
                     margin-left: var(--spacing-xs)
         .formSubmit
             margin-top: auto
+            display: -webkit-box
+            display: -ms-flexbox
             display: flex
+            -webkit-box-pack: end
+            -ms-flex-pack: end
             justify-content: flex-end
             gap: var(--spacing-sm)
+
 @media (max-width: 700px)
     .formContainer
         .form
-
             .fieldsWrapper
                 grid-template-columns: 1fr
+                -ms-grid-columns: 1fr
+
             .formSubmit
                 padding-bottom: var(--spacing-lg)
                 margin: var(--spacing-lg) 0
@@ -42,11 +64,17 @@
 @media (max-width: 400px)
     .formContainer
         .form
-
             .fieldsWrapper
                 grid-template-columns: 1fr
+                -ms-grid-columns: 1fr
+
             .formSubmit
+                display: -webkit-box
+                display: -ms-flexbox
                 display: flex
+                -webkit-box-orient: vertical
+                -webkit-box-direction: normal
+                -ms-flex-direction: column
                 flex-direction: column
                 padding-bottom: var(--spacing-lg)
                 margin: var(--spacing-lg) 0

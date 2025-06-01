@@ -1,40 +1,31 @@
 .tableBottom {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-top: var(--spacing-lg);
   padding-top: var(--spacing-lg);
   border-top: 1px solid var(--color-border);
-  align-items: center;
 }
-.tableBottom .dataLoading {
-  color: var(--color-text-secondary);
+.tableBottom .dataLoading,
+.tableBottom .dataLoaded,
+.tableBottom .dataNotLoaded {
   display: flex;
   align-items: center;
+  color: var(--color-text-secondary);
 }
 .tableBottom .dataLoading .dataIconLoading {
   margin-left: var(--spacing-sm);
   color: var(--color-accent);
   animation: spin 1s linear infinite;
 }
-.tableBottom .dataLoaded {
-  color: var(--color-text-secondary);
-  display: flex;
-  align-items: center;
-}
 .tableBottom .dataLoaded .dataIcon {
   margin-left: var(--spacing-xs);
   color: var(--color-success);
-}
-.tableBottom .dataNotLoaded {
-  color: var(--color-text-secondary);
-  display: flex;
-  align-items: center;
 }
 .tableBottom .dataNotLoaded .dataIcon {
   margin-left: var(--spacing-xs);
   color: var(--color-error);
 }
-
 @keyframes spin {
   from {
     transform: rotate(0deg);

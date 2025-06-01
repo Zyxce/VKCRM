@@ -95,8 +95,10 @@ export const DataTable: React.FC<DataTableProps> = ({ onEditRecord }) => {
             </tr>
           )}
           {!hasMore && records.length > 0 && (
-            <tr className={style.noMoreRecords}>
-              <td colSpan={columns.length + 2}>No more records to load</td>
+            <tr>
+              <td className={style.noMoreRecords} colSpan={columns.length + 2}>
+                No more records to load
+              </td>
             </tr>
           )}
         </tbody>

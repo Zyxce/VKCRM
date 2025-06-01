@@ -2,16 +2,18 @@
   height: 470px;
   overflow-y: auto;
   box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
 }
 .dataContainer .dataTable {
   width: 100%;
   border-collapse: collapse;
+  table-layout: auto;
 }
 .dataContainer .dataTable .dataTableHeader .dataTableHeaderTR th {
   position: sticky;
-  border-bottom: 1px solid var(--color-border);
   top: 0;
   z-index: 2;
+  border-bottom: 1px solid var(--color-border);
   text-align: left;
   background-color: var(--color-bg-th);
   padding: var(--spacing-sm) var(--spacing-md);
@@ -42,14 +44,14 @@
 .dataContainer .dataTable .dataTableBody .noMoreRecords {
   background-color: var(--color-bg-nomore-tr);
 }
-.dataContainer .dataTable .dataTableBody .noMoreRecords td .dataIconNoMore {
+.dataContainer .dataTable .dataTableBody .noMoreRecords .dataIconNoMore {
   margin-left: var(--spacing-sm);
   color: var(--color-text-primary);
 }
 .dataContainer .dataTable .dataTableBody .loadingData {
   background-color: var(--color-bg-loading-tr);
 }
-.dataContainer .dataTable .dataTableBody .loadingData td .dataIconLoading {
+.dataContainer .dataTable .dataTableBody .loadingData .dataIconLoading {
   margin-left: var(--spacing-sm);
   color: var(--color-accent);
   animation: spin 1s linear infinite;
@@ -57,7 +59,6 @@
 .dataContainer .dataTable td {
   border-bottom: 1px solid var(--color-border);
 }
-
 @keyframes spin {
   from {
     transform: rotate(0deg);
